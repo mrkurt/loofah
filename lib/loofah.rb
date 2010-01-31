@@ -87,8 +87,10 @@ if defined? Rails.configuration and Rails.configuration.frameworks.include?([:ac
   Rails.configuration.after_initialize do
     require 'loofah/active_record'
     require 'loofah/xss_foliate'
+    ActiveRecord::Base.extend(Loofah::ActiveRecordExtension)
   end
 elsif defined? ActiveRecord::Base # rails 2.0
   require 'loofah/active_record'
   require 'loofah/xss_foliate'
+  ActiveRecord::Base.extend(Loofah::ActiveRecordExtension)
 end

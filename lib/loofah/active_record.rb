@@ -59,4 +59,3 @@ module Loofah
   end
 end
 
-ActiveRecord::Base.extend(Loofah::ActiveRecordExtension)
